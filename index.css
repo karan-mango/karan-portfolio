@@ -142,6 +142,8 @@ button:hover{
       width: 97%;
       padding: 10px;
       position: relative;
+      opacity: 0;
+      transition: opacity 4s ease;
 
       .textBox {
         padding: 10px;
@@ -179,8 +181,14 @@ button:hover{
         border-right: 15px solid     white;
         left: -15px;
         top: 15px;
+       
       }
     }
+
+    .visible{
+      opacity: 1;
+     
+  }
 
     .right {
       position: relative;
@@ -193,12 +201,18 @@ button:hover{
     content: "";
     width: 5px;
     height: 95%;
-    background: #ff0101;
+    background: #11d379;
     position: absolute;
     top: 3%;
     left: 18.5px;
     z-index: 1;
+    height: 0;
+    transition: height 3s ease-out;
   }
+  .timelineWrapper.visible::before{
+    height: 95%;
+   
+}
 }
 
 .skills {
@@ -523,6 +537,15 @@ i{
 
   /* my introduction */
 
+  .introwrapper{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+  }
+
+
   .introCont {
     display: grid;
     grid-template-rows: 7vw auto;
@@ -588,7 +611,7 @@ i{
   }
 
   .achivementsCont {
-
+    
 
     .timelineWrapper {
       position: relative;
@@ -667,13 +690,19 @@ i{
     .timelineWrapper::before {
       content: "";
       width: 5px;
-      height: 95%;
+   
       background: #ff4848;
       position: absolute;
       top: 1.6%;
       left: 50%;
       z-index: 1;
+      height: 0;
+      transition: height 7s ease-out;
     }
+    .timelineWrapper.visible::before{
+      height: 95%;
+     
+  }
   }
 
   .skills {
@@ -1101,4 +1130,14 @@ i{
       margin: 10px;
     }
   }
+}
+
+
+
+
+
+
+.visible{
+  opacity: 1;
+ 
 }
